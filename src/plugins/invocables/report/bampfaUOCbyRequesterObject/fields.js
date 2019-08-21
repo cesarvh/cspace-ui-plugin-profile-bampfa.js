@@ -23,12 +23,16 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCRequesterbyObject.Requester.name',
+              id: 'field.report.bampfaUOCbyRequesterObject.Requester.name',
               defaultMessage: 'Requester',
             },
           }),
           view: {
-            type: TextInput,
+            type: AutocompleteInput,
+            props: {
+              source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
+              showQuickAdd: false,
+            }
           },
         },
       },
@@ -36,15 +40,12 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCRequesterbyObject.ObjectNumber.name',
-              defaultMessage: 'ObjectNumber',
+              id: 'field.report.bampfaUOCbyRequesterObject.ObjectNumber.name',
+              defaultMessage: 'Object number',
             },
           }),
           view: {
-            type: AutocompleteInput,
-            props: {
-              source: 'person/local,person/shared,organization/local,organization/shared',
-            },
+            type: TextInput,
           },
         },
       },
@@ -53,7 +54,7 @@ export default (configContext) => {
           defaultValue: 'application/pdf',
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCRequesterbyObject.OutputMIME.name',
+              id: 'field.report.bampfaUOCbyRequesterObject.OutputMIME.name',
               defaultMessage: 'Output format',
             },
           }),
